@@ -44,7 +44,7 @@ function CreateJob() {
   
       formData.token=token;
       // If user is an admin, proceed with job creation
-      const jobResponse = await fetch('http://localhost:8080/api/v1/job/createJob', {
+      const jobResponse = await fetch('https://awsar.onrender.com/api/v1/job/createJob', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
