@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 require('dotenv').config();
 
 exports.dbConnect=()=>{
-    mongoose.connect(process.env.DATABASE_URL)
+    mongoose.connect(process.env.DB)
     .then(()=>{
         console.log("Databased connected successfully")
     })

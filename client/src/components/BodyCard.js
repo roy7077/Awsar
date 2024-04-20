@@ -14,7 +14,7 @@ function BodyCard() {
 
   const fetchInternships = async () => {
     try {
-      const response = await fetch('https://awsar.onrender.com/api/v1/job/getAllJobs');
+      const response = await fetch('http://localhost:8080/api/v1/job/getAllJobs');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

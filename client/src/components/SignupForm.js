@@ -31,7 +31,8 @@ function SignupForm() {
 
     try {
       // Make a POST request to your backend API endpoint to generate and send OTP
-      const response = await fetch('https://awsar.onrender.com/api/v1/auth/sendOtp', {
+      
+      const response = await fetch('http://localhost:8080/api/v1/auth/sendOtp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
