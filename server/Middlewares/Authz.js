@@ -3,10 +3,14 @@ require('dotenv').config();
 
 exports.authz = async (req, res, next) => {
     try {
-        const token = req.body.token || req.cookies.token || req.header("Authorization").replace("Bearer ","");
-        console.log("re.body ", req.body.token);
-        console.log("cookies ",req.cookies.token);
+        //console.log(req.body);
+        // console.log(req);
+        const token = req.body.token || req.cookies.token || (req.header("Authorization") && req.header("Authorization").replace("Bearer ",""));
+
+        // console.log("re.body ", req.body.token);
+        // console.log("cookies ",req.cookies.token);
         //console.log("header ",req.header("Authorization").replace("Bearer ",""))
+        
         if (!token) {
             return res.status(401).json({
                 success: false,

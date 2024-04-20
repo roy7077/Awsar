@@ -1,0 +1,54 @@
+.body-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .body-card {
+    max-width: 80%; /* Decrease width from both ends */
+    text-align: center;
+  }
+  
+  .latest-internships h2 {
+    font-size: 2em; /* Make the header big */
+  }
+  
+  .latest-internships{
+    min-height: 100vh;
+    padding: 3rem;
+  }
+  
+  .no-intern{
+    min-height: 100vh;
+    margin: 100px;
+  }
+  .carousel-container {
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+  
+  .job-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .job-card {
+    max-width: 300px; /* Adjust as needed */
+    margin: 10px;
+  }
+  
+  .carousel-image {
+    height: 300px; /* Adjust the height as needed */
+    width: 100%; /* Ensure the image fills the entire width */
+    object-fit: cover; /* Ensure the image covers the entire container */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .latest-internships{
+      padding: 0rem;
+      padding-bottom: 2rem;
+    }
+  }
+  

@@ -10,12 +10,12 @@ require('dotenv').config();
 exports.sendOTP=async (req,res)=>{
     try{
 
-        console.log("hello");
-        console.log(req.body);
+        //console.log("hello");
+        //console.log(req.body);
         
         //data fetch from req's body
         const {email}=req.body;
-        console.log("email -> ",email);
+        //console.log("email -> ",email);
 
         const isPresent=await User.findOne({email});
 
@@ -70,6 +70,7 @@ exports.sendOTP=async (req,res)=>{
 exports.signUp=async(req,res)=>{
     try{
         //fetch data from req's body
+        //console.log(req.body);
         const{
             firstName,
             lastName,
@@ -79,6 +80,14 @@ exports.signUp=async(req,res)=>{
             accountType,
             otp
         }=req.body;
+
+        console.log(firstName);
+        console.log(lastName);
+        console.log(email);
+        console.log(password);
+        console.log(confirmPassword);
+        console.log(accountType);
+        console.log(otp);
 
         // validate data 
         if (!firstName || 
@@ -94,6 +103,8 @@ exports.signUp=async(req,res)=>{
             });
         }
 
+        //console.log(106);
+
         // Check password and confirm password
         if (password !== confirmPassword) {
             return res.status(422).json({
@@ -101,6 +112,8 @@ exports.signUp=async(req,res)=>{
                 message: "Password and confirm password do not match."
             });
         }
+
+        //console.log(116);
 
         // Check if user is already present
         const userDetails = await User.findOne({ email: email });
@@ -112,10 +125,12 @@ exports.signUp=async(req,res)=>{
             });
         }
         
+        //console.log(128);
+
         //match otp
         const mostRecentOtp=await OTP.findOne({email}).sort({createdAt:-1}).limit(1);
 
-        if(mostRecentOtp.length==0)
+        if(!mostRecentOtp)
         {
             return res.status(422).json({
                 success:false,
@@ -130,6 +145,7 @@ exports.signUp=async(req,res)=>{
             })
         }
 
+        //console.log(148);
         //creating entry in Proile DB
         const ProfileDetails=await Profile.create({
             gender:null,
@@ -149,7 +165,7 @@ exports.signUp=async(req,res)=>{
             password:hashedPassword,
             accountType,
             additionalDetails:ProfileDetails._id,
-            image:`https://api.dicebear.com/5.x/initials/svg?seed=${firstName}${lastName}`,
+            image:`https://api.dicebear.com/5.x/initials/svg?seed=${firstName }${lastName}`,
         })
 
         //return response

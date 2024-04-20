@@ -1,11 +1,11 @@
 const mongoose=require('mongoose');
 
-const skillSchema=new mongoose.Schema({
+const categorySchema=new mongoose.Schema({
     name:{
         type:String,
         required:true,
     },
-    skillDescription:{
+    categoryDescription:{
         type:String,
         required:true,
     },
@@ -17,4 +17,4 @@ const skillSchema=new mongoose.Schema({
     ],
 })
 
-module.exports=mongoose.model("Skills",skillSchema);
+module.exports=mongoose.model("Category",categorySchema);

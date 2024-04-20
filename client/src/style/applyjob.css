@@ -1,0 +1,51 @@
+.apply-job-container {
+  padding-top: 2rem;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Set minimum height to full viewport height */
+}
+
+  .apply-job-content {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .apply-job-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .apply-job-header p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .apply-job-body h3 {
+    margin-top: 20px; /* Added margin to separate heading */
+  }
+  
+  .apply-job-body p {
+    margin: 10px 0;
+  }
+  
+  .apply-now-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .apply-now-button:hover {
+    background-color: #0056b3;
+  }
+  
