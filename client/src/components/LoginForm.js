@@ -18,7 +18,7 @@ function LoginForm() {
   
     try {
       // Send formData to your backend API for login
-      const response = await fetch('http://localhost:8080/api/v1/auth/login', {
+      const response = await fetch('https://awsar.onrender.com/api/v1/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

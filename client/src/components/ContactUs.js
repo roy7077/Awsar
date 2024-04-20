@@ -15,7 +15,7 @@ function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8080/api/v1/contactUs', {
+      const response = await fetch('https://awsar.onrender.com/api/v1/contactUs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
